@@ -11,15 +11,10 @@ let package = Package(
             targets: ["Reachability"]),
     ],
     targets: [
-        .target(
+       .binaryTarget(
             name: "Reachability",
-            dependencies: [],
-            path: "Sources",
-            resources: [.copy("PrivacyInfo.xcprivacy")]
-        ),
-        .testTarget(
-            name: "ReachabilityTests",
-            dependencies: ["Reachability"],
-            path: "Tests"),
+            url: "https://distribution.accuterra.com/com/accuterra/reachability/5.2.4/Reachability.xcframework.zip",
+            checksum: "7133627ccea034dfe7029746aec9415707be135521623289b2e25e3fca608642"
+        )
     ]
 )
