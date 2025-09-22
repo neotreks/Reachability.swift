@@ -281,16 +281,14 @@ fileprivate extension Reachability {
 
 extension SCNetworkReachabilityFlags {
 
-    typealias Connection = Reachability.Connection
-
-    var connection: Connection {
+    var connection: Reachability.Connection {
         guard isReachableFlagSet else { return .unavailable }
 
         // If we're reachable, but not on an iOS device (i.e. simulator), we must be on WiFi
         #if targetEnvironment(simulator)
         return .wifi
         #else
-        var connection = Connection.unavailable
+        var connection = Reachability.Connection.unavailable
 
         if !isConnectionRequiredFlagSet {
             connection = .wifi
