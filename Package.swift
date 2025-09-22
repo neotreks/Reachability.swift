@@ -14,7 +14,7 @@ let package = Package(
        .binaryTarget(
             name: "Reachability",
             url: "https://distribution.accuterra.com/com/accuterra/reachability/5.2.4/Reachability.xcframework.zip",
-            checksum: "7133627ccea034dfe7029746aec9415707be135521623289b2e25e3fca608642"
+            checksum: "7a06dc2984d2bdfd9f6e36d3c3e19cb4fb35bfcb12f3a5283c4fa1d0a23dfc0e"
         )
     ]
 )
