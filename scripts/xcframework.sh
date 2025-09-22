@@ -13,29 +13,29 @@ commands=()
 for platform in "${platforms[@]}"
 do
   xcodebuild archive \
-    -scheme "Reachability" \
+    -scheme "ReachabilitySwift" \
     -configuration Release \
-    -archivePath "$BUILD_DIRECTORY/archives/Reachability-$platform.xcarchive" \
+    -archivePath "$BUILD_DIRECTORY/archives/ReachabilitySwift-$platform.xcarchive" \
     -destination "generic/platform=$platform" \
     SKIP_INSTALL=NO \
     BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
     SUPPORTS_MACCATALYST=YES
 
-  commands+=("-archive" "$BUILD_DIRECTORY/archives/Reachability-$platform.xcarchive")
-  commands+=("-framework" "Reachability.framework")
+  commands+=("-archive" "$BUILD_DIRECTORY/archives/ReachabilitySwift-$platform.xcarchive")
+  commands+=("-framework" "ReachabilitySwift.framework")
 
 done
 
-xcodebuild -create-xcframework "${commands[@]}" -output "$BUILD_DIRECTORY/Reachability.xcframework"
+xcodebuild -create-xcframework "${commands[@]}" -output "$BUILD_DIRECTORY/ReachabilitySwift.xcframework"
 
 cp "LICENSE.md" "$BUILD_DIRECTORY/LICENSE.md"
 cd "$BUILD_DIRECTORY"
 
-ZIP_OUTPUT_PATH="Reachability.xcframework.zip"
+ZIP_OUTPUT_PATH="ReachabilitySwift.xcframework.zip"
 rm -rf "$ZIP_OUTPUT_PATH"
 
 zip --symlinks -r "$ZIP_OUTPUT_PATH" \
-    Reachability.xcframework \
+    ReachabilitySwift.xcframework \
     LICENSE.md
 
 CHECKSUM=$(swift package compute-checksum "$ZIP_OUTPUT_PATH")

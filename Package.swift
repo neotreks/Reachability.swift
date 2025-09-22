@@ -8,13 +8,13 @@ let package = Package(
     products: [
         .library(
             name: "ReachabilitySwift",
-            targets: ["Reachability"]),
+            targets: ["ReachabilitySwift"]),
     ],
     targets: [
        .binaryTarget(
-            name: "Reachability",
-            url: "https://distribution.accuterra.com/com/accuterra/reachability/5.2.4/Reachability.xcframework.zip",
-            checksum: "7a06dc2984d2bdfd9f6e36d3c3e19cb4fb35bfcb12f3a5283c4fa1d0a23dfc0e"
+            name: "ReachabilitySwift",
+            url: "https://distribution.accuterra.com/com/accuterra/reachability/5.2.4/ReachabilitySwift.xcframework.zip",
+            checksum: "09cd82a00ffe99a911255f4dc3067cd621529dc64eabf3cb526ddd901f72913a"
         )
     ]
 )
